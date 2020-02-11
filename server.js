@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 
-var HEROS_COLLECTION = "contacts";
+var HEROS_COLLECTION = "heros";
 
 var app = express();
 app.use(bodyParser.json());
