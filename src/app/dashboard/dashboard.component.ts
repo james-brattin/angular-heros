@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroService } from '../hero.service';
+import { Subscription, Observable } from 'rxjs';
+import { share } from 'rxjs/operators';
+import { Hero } from '../models/Hero';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  heros$: Observable<Hero | any>;
+  createNew: Boolean = false;
+
+  constructor(private heroService: HeroService) { }
 
   ngOnInit() {
+    this.heros$ = this.heroService.heros$.pipe(share());
   }
-
 }
