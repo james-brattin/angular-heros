@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../hero.service';
-import { Subscription, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { share } from 'rxjs/operators';
 import { Hero } from '../models/Hero';
 
